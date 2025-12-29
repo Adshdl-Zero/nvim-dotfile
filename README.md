@@ -57,23 +57,28 @@ npm install -g prettier
 
 # C / C++
 
-sudo pacman -S clang clang-format # Arch
+Arch:
+sudo pacman -S clang clang-format
 
-# or equivalent for your distro
+or equivalent for your distro
 
 # Lua
 
 sudo pacman -S stylua
 
-🚀 Installation
+# 🚀 Installation
+
 1️⃣ Backup existing config (optional)
-mv ~/.config/nvim ~/.config/nvim.backup
+
+`mv ~/.config/nvim ~/.config/nvim.backup`
 
 2️⃣ Clone this repository
-git clone https://github.com/Adshdl-Zero/nvim-dotfile.git ~/.config/nvim
+
+`git clone https://github.com/Adshdl-Zero/nvim-dotfile.git ~/.config/nvim`
 
 3️⃣ Start Neovim
-nvim
+
+`nvim`
 
 On first launch:
 
@@ -81,141 +86,34 @@ lazy.nvim will auto-install
 
 All plugins will be downloaded automatically
 
-🔌 Plugins Used
-Plugin Manager
+# Key Highlights
 
-folke/lazy.nvim – Modern async plugin manager
-
-UI / UX
-
-rose-pine/neovim – Colorscheme
-
-nvim-lualine/lualine.nvim – Statusline
-
-nvim-tree/nvim-tree.lua – File explorer
-
-nvim-tree/nvim-web-devicons – Icons
-
-Navigation & Search
-
-nvim-telescope/telescope.nvim – Fuzzy finder
-
-nvim-lua/plenary.nvim – Lua utility library
-
-ThePrimeagen/harpoon (harpoon2) – Quick file jumps
-
-Syntax & Highlighting
-
-nvim-treesitter/nvim-treesitter – Syntax highlighting & parsing
-
-Git
-
-tpope/vim-fugitive – Git inside Neovim
-
-Editing Enhancements
-
-windwp/nvim-autopairs – Auto-close brackets
-
-numToStr/Comment.nvim – Toggle comments
-
-mbbill/undotree – Visual undo history
-
-LSP & Autocompletion
-
-neovim/nvim-lspconfig – LSP configuration
-
-mason-org/mason.nvim – LSP installer
-
-mason-org/mason-lspconfig.nvim – Mason ↔ LSP bridge
-
-Completion & Snippets
-
-hrsh7th/nvim-cmp – Completion engine
-
-hrsh7th/cmp-nvim-lsp
-
-hrsh7th/cmp-buffer
-
-hrsh7th/cmp-path
-
-hrsh7th/cmp-nvim-lua
-
-saadparwaiz1/cmp_luasnip
-
-L3MON4D3/LuaSnip – Snippet engine
-
-rafamadriz/friendly-snippets – Predefined snippets
-
-Formatting
-
-stevearc/conform.nvim – Auto-format on save
-
-🧠 Language Server Setup
-
-Configured LSPs:
-
-Pyright – Python
-
-clangd – C / C++
-
-lua_ls – Lua (Neovim-aware)
-
-LSPs are installed via Mason.
-
-⌨️ Key Highlights
-Leader Key
-<Space>
+<leader> = " "
 
 Telescope
 
-<leader>pf → Find files
-
-<leader>ps → Grep string
-
-<C-p> → Git files
+- <leader>pf → Find files
+- <leader>ps → Grep string
+- <C-p> → Git files
 
 Git (Fugitive)
 
-<leader>gs → Git status
+- <leader>gs → Git status
 
 Harpoon
 
-<leader>a → Add file
-
-<C-e> → Harpoon menu
-
-<C-1..4> → Jump to file
+- <leader>a → Add file
+- <C-e> → Harpoon menu
+- <C-1..4> → Jump to file
 
 File Explorer
 
-<leader>e → Toggle tree
-
-<leader>f → Reveal file
+- <leader>e → Toggle tree
+- <leader>f → Reveal file
 
 Diagnostics
 
-[d / ]d → Prev / next diagnostic
+- [d / ]d → Prev / next diagnostic
+- <leader>fd → Line diagnostics
 
-<leader>fd → Line diagnostics
-
-🧪 Formatting on Save
-
-Automatically formats on save using:
-
-black (Python)
-
-prettier (JS/TS/JSON/HTML/CSS/Markdown)
-
-stylua (Lua)
-
-clang-format (C/C++)
-
-🧠 Notes
-
-Cursor stays centered while scrolling
-
-Relative + absolute line numbers enabled
-
-Designed to be minimal but extensible
-
-Easy to fork and customize
+Automatically formats on save
