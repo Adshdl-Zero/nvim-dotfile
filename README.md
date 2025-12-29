@@ -88,32 +88,32 @@ All plugins will be downloaded automatically
 
 # Key Highlights
 
-<leader> = " "
+\<leader> = " "
 
 Telescope
 
-- <leader>pf → Find files
-- <leader>ps → Grep string
-- <C-p> → Git files
+- \<leader>pf → Find files
+- \<leader>ps → Grep string
+- \<C-p> → Git files
 
 Git (Fugitive)
 
-- <leader>gs → Git status
+- \<leader>gs → Git status
 
 Harpoon
 
-- <leader>a → Add file
-- <C-e> → Harpoon menu
-- <C-1..4> → Jump to file
+- \<leader>a → Add file
+- \<C-e> → Harpoon menu
+- \<C-1..4> → Jump to file
 
 File Explorer
 
-- <leader>e → Toggle tree
-- <leader>f → Reveal file
+- \<leader>e → Toggle tree
+- \<leader>f → Reveal file
 
 Diagnostics
 
 - [d / ]d → Prev / next diagnostic
-- <leader>fd → Line diagnostics
+- \<leader>fd → Line diagnostics
 
 Automatically formats on save
