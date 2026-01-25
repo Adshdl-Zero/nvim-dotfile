@@ -137,8 +137,49 @@ require("lazy").setup({
 			"neovim/nvim-lspconfig",
 			event = { "BufReadPre", "BufNewFile" },
 			dependencies = {
-				{ "mason-org/mason.nvim", opts = {} },
-				{ "mason-org/mason-lspconfig.nvim", opts = {} },
+		{
+			"mason-org/mason.nvim",
+			opts = {
+				ensure_installed = {
+					-- LSP Servers
+					"bashls",
+					"clangd",
+					"cssls",
+					"dockerls",
+					"html",
+					"jsonls",
+					"lua_ls",
+					"marksman",
+					"pyright",
+					"ts_ls",
+					"yamlls",
+					-- Formatters
+					"black",
+					"clang-format",
+					"prettier",
+					"ruff",
+					"stylua",
+				},
+			},
+		},
+		{
+			"mason-org/mason-lspconfig.nvim",
+			opts = {
+				ensure_installed = {
+					"bashls",
+					"clangd",
+					"cssls",
+					"dockerls",
+					"html",
+					"jsonls",
+					"lua_ls",
+					"marksman",
+					"pyright",
+					"ts_ls",
+					"yamlls",
+				},
+			},
+		},
 				{
 					"hrsh7th/cmp-nvim-lsp",
 					lazy = false,
@@ -148,14 +189,27 @@ require("lazy").setup({
 			config = function()
 				local capabilities = require("cmp_nvim_lsp").default_capabilities()
 				local servers = {
+					-- Python
 					pyright = {
 						capabilities = capabilities,
 					},
 
+					-- JavaScript / TypeScript
+					ts_ls = {
+						capabilities = capabilities,
+					},
+
+					-- Java
+					jdtls = {
+						capabilities = capabilities,
+					},
+
+					-- C / C++
 					clangd = {
 						capabilities = capabilities,
 					},
 
+					-- Lua
 					lua_ls = {
 						capabilities = capabilities,
 						settings = {
@@ -165,6 +219,46 @@ require("lazy").setup({
 								},
 							},
 						},
+					},
+
+					-- CSS
+					cssls = {
+						capabilities = capabilities,
+					},
+
+					-- HTML
+					html = {
+						capabilities = capabilities,
+					},
+
+					-- JSON
+					jsonls = {
+						capabilities = capabilities,
+					},
+
+					-- YAML
+					yamlls = {
+						capabilities = capabilities,
+					},
+
+					-- Bash
+					bashls = {
+						capabilities = capabilities,
+					},
+
+					-- Docker
+					dockerls = {
+						capabilities = capabilities,
+					},
+
+					-- SQL
+					sqlls = {
+						capabilities = capabilities,
+					},
+
+					-- Markdown
+					marksman = {
+						capabilities = capabilities,
 					},
 				}
 
@@ -245,7 +339,7 @@ require("lazy").setup({
 			opts = {
 				formatters_by_ft = {
 					lua = { "stylua" },
-					python = { "black" },
+					python = { "black", "ruff" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
 					javascriptreact = { "prettier" },
@@ -257,6 +351,9 @@ require("lazy").setup({
 					markdown = { "prettier" },
 					c = { "clang_format" },
 					cpp = { "clang_format" },
+					bash = { "prettier" },
+					docker = { "prettier" },
+					sql = { "prettier" },
 				},
 
 				format_on_save = {
