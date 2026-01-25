@@ -146,26 +146,33 @@ require("lazy").setup({
 			},
 
 			config = function()
-				local lspconfig = require("lspconfig")
 				local capabilities = require("cmp_nvim_lsp").default_capabilities()
-				lspconfig.pyright.setup({
-					capabilities = capabilities,
-				})
+				local servers = {
+					pyright = {
+						capabilities = capabilities,
+					},
 
-				lspconfig.clangd.setup({
-					capabilities = capabilities,
-				})
+					clangd = {
+						capabilities = capabilities,
+					},
 
-				lspconfig.lua_ls.setup({
-					capabilities = capabilities,
-					settings = {
-						Lua = {
-							diagnostics = {
-								globals = { "vim" },
+					lua_ls = {
+						capabilities = capabilities,
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = { "vim" },
+								},
 							},
 						},
 					},
-				})
+				}
+
+				for server, opts in pairs(servers) do
+					vim.lsp.config(server, opts)
+				end
+
+				vim.lsp.enable(vim.tbl_keys(servers))
 			end,
 		},
 		{
